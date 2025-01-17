@@ -1,0 +1,201 @@
+:root {
+    --accent-color: #ff8800; /* Example color */
+  }
+  
+ /* Hide ad on screens smaller than 1119px */
+ .desktop-only-ad {
+    position: fixed;
+    display: none;
+    top: 30%;
+    transform: translateY(-30%);
+    z-index: 9999; /* Make sure the ads are above other content */
+}
+
+/* Style for left-side ad */
+.left-ad {
+    left: 10px; /* Distance from the left side */
+}
+
+/* Style for right-side ad */
+.right-ad {
+    right: 10px; /* Distance from the right side */
+}
+          
+             /* Show ad only on larger screens */
+             @media (min-width: 1120px) {
+              .desktop-only-ad {
+                 display: block;
+              }
+            }
+
+            /* Show ad only on smaller screens */
+            @media (max-width: 1119px) {
+              .mobile-only-ad {
+                 display: block;
+              }
+            }
+
+                /* Hide ad on screens larger than 1119px */
+            .mobile-only-ad {
+                display: none;
+            }
+            
+        /* Close button styles */
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 20px; /* Vertically centers the text */
+            cursor: pointer;
+            z-index: 10000; /* Ensures button stays on top */
+        }
+
+        .close-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+            /* Style the label to align items in a modern way */
+.send-on-enter-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--accent-color) !important; /* Neon green for your site color */
+    transition: color 0.3s ease;
+}
+
+/* Style the checkbox itself */
+.send-on-enter-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #1a1a1a; /* Dark background */
+    border-radius: 5px;
+    border: 2px solid var(--accent-color) !important; /* Neon green border */
+    position: relative;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Add a modern checkmark */
+.send-on-enter-checkbox:checked {
+    background-color: var(--accent-color) !important; /* Green background when checked */
+    border-color: var(--accent-color) !important;
+}
+
+.send-on-enter-checkbox:checked::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Style the text next to the checkbox */
+.checkbox-text {
+    margin-left: 8px;
+    color: var(--accent-color) !important; /* Match text with checkbox border */
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the label */
+.send-on-enter-label:hover .checkbox-text {
+    color: #FF9800; /* Orange on hover */
+}
+
+/* Hover effect for the checkbox */
+.send-on-enter-checkbox:hover {
+    border-color: #FF9800; /* Change border color on hover */
+}
+
+
+#image-container {
+    margin-top: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    /* border: 1px solid #ccc; */
+    padding: 5px;
+}
+
+/* Cooldown Disabled Button Styles */
+button:disabled {
+    background-color: #0a2416 !important; /* Gray background to indicate disabled state */
+    color: hsla(0, 0%, 100%, 0.15) !important;
+    cursor: not-allowed; /* Show a "not-allowed" cursor */
+    opacity: 1; /* Reduce opacity to indicate the button is inactive */
+    transition: background-color 0.3s, opacity 0.3s ease-in; /* Smooth transition */
+}
+
+/* Countdown spinner styles */
+button.cooldown .countdown-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    z-index: 2; /* Ensure the text is above the spinner */
+}
+
+/* Spinner styles */
+button.cooldown-spinner {
+    position: relative;  /* Ensure button is a positioned container */
+    display: flex;  /* Use flexbox to center content */
+    align-items: center;  /* Vertically center content */
+    justify-content: center;  /* Horizontally center content */
+    padding: 10px 20px;  /* Adjust padding as needed */
+}
+
+button.cooldown-spinner:before {
+    content: '';
+    position: absolute;  /* Position the spinner within the button */
+    width: 30px;  /* Set width for spinner */
+    height: 30px;  /* Set height for spinner */
+    border: 3px solid #fff;
+    border-top: 3px solid var(--accent-color) !important;  /* Green spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    visibility: visible;  /* Ensure the spinner is visible */
+}
+
+/* Countdown styles */
+button.cooldown {
+    position: relative;  /* Ensure button is a positioned container */
+    display: flex;  /* Use flexbox to center content */
+    align-items: center;  /* Vertically center content */
+    justify-content: center;  /* Horizontally center content */
+    padding: 10px 20px;  /* Adjust padding as needed */
+}
+
+/* Countdown text styling */
+button.cooldown span {
+    visibility: visible;  /* Ensure the text is visible when spinner is active */
+    position: relative;  /* Make sure text appears above spinner */
+}
+
+/* Keyframes for the spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
