@@ -980,7 +980,7 @@ console.log("RequestData: ", requestData);
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + localStorage.getItem('token'), // Use 'Bearer' followed by the token
+               // 'Authorization': 'Bearer ' + localStorage.getItem('token'), // Use 'Bearer' followed by the token
             },
             body: JSON.stringify(requestData)
         });
