@@ -1175,18 +1175,18 @@ function regenerateMessage() {
 
              // remove the last assistant message if needed
              if (messages.length = 1) {
-                autoinput = "Generate a long first greeting message. The message should maintain the personality outlined in the system prompt. The message should feel natural and fitting for the scenario.";
+               // autoinput = "Generate a long first greeting message. The message should maintain the personality outlined in the system prompt. The message should feel natural and fitting for the scenario.";
                 messages.pop(); // Remove the last message from the array
                 deleteMessage(0, true);
-                sendMessage(autoinput);
+                sendMessage();
             }
         }
     } else {
           // remove the last assistant message if needed
           if (messages.length = 1) {
-            autoinput = "Generate a long first greeting message. The message should maintain the personality outlined in the system prompt. The message should feel natural and fitting for the scenario.";
+           // autoinput = "Generate a long first greeting message. The message should maintain the personality outlined in the system prompt. The message should feel natural and fitting for the scenario.";
             messages.pop(); // Remove the last message from the array
-            sendMessage(autoinput);
+            sendMessage();
         } else {
             displayMessage('No previous assistant message found to regenerate.', 'assistant');
         }
