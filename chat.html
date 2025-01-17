@@ -601,7 +601,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             // Check for user token
                             const userToken = localStorage.getItem('token'); // Replace with your method of obtaining the token
                             console.log(userToken);
-                            subscriptionTier = getUserSubscriptionTier(userToken);
+                            subscriptionTier = 1 //getUserSubscriptionTier(userToken);
                             console.log(subscriptionTier);
                     
                             // Force "NethralIQ" if the user is not premium
